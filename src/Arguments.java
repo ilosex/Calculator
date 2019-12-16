@@ -8,11 +8,12 @@ class Arguments {
     static boolean verifyArguments(String[] args){
         boolean integerArgs = false,
                 romanNumber = false,
-                mathOperatorsIsOk = true;
+                mathOperatorsIsOk = false;
         for (String arg : args) {
             if (Arguments.isInteger(arg)) integerArgs = true;
-            if (Arguments.isRomanNumber(arg)) romanNumber = true;
-            if (Arguments.isRomanNumber(arg) && Arguments.isInteger(arg)) mathOperatorsIsOk &= isMathOperator(arg);
+            else if (Arguments.isRomanNumber(arg)) romanNumber = true;
+            else if (Arguments.isMathOperator(arg)) mathOperatorsIsOk = true;
+            else return false;
         }
         return ((args.length % 2 != 0) && (integerArgs ^ romanNumber) && mathOperatorsIsOk);
     }
@@ -23,7 +24,7 @@ class Arguments {
      * @return результат проверки
      */
     static boolean isInteger(String s) {
-        return s.matches("[0-9]");
+        return s.matches("[0-9]+");
     }
 
     /**
@@ -45,7 +46,7 @@ class Arguments {
      * @return результат проверки
      */
     private static boolean isMathOperator(String s) {
-        return s.length() == 1 && s.matches("[+\\-*/]");
+        return s.length() == 1 && s.matches("[*-/:]+");
     }
 
     /**

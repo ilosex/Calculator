@@ -1,4 +1,10 @@
 public class OutputOperation {
+
+    /**
+     * Метод formatOutput определяет в каком виде введены аргументы и отдает результат вычислений в том же виде
+     * @param args - входные аргументы
+     * @return форматированный результат вычислений
+     */
     private static String formatOutput (String[] args) {
         String formattedResult = "";
 
@@ -8,6 +14,10 @@ public class OutputOperation {
         return formattedResult;
     }
 
+    /**
+     * Метод outputResult принимает входной массив аргументов и выводит результат вычислений на экран
+     * @param args - входной массив аргументов
+     */
     static void outputResult (String[] args) {
         String inputString = "";
 

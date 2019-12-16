@@ -1,7 +1,7 @@
 public class CalcMain {
 
     public static void main(String[] args) {
-        args = new String[]{"X", "*", "II", "-", "I"};
+
         /*
          * Проверяем, что получили что-то похожее на пример
          */

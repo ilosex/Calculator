@@ -65,8 +65,11 @@ class CalcOperation {
                 break;
 
             case ("/"):
+
+            case (":"):
                 result = CalcOperation.division(arg1, arg2);
                 break;
+
         }
         return result;
     }
@@ -84,7 +87,7 @@ class CalcOperation {
         boolean flag = true;
         while (input.size() > 1) {
             for(int i = 0; i < input.size(); i++) {
-                if(input.get(i).matches(flag ? "[*/]" : "[+-]")) {
+                if(input.get(i).matches(flag ? "[*/:]" : "[+-]")) {
                     int argument1, argument2;
                     argument1 = Integer.parseInt(input.get(i - 1));
                     argument2 = Integer.parseInt(input.remove(i + 1));
