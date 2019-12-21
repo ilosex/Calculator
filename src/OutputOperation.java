@@ -19,14 +19,8 @@ public class OutputOperation {
      * @param args - входной массив аргументов
      */
     static void outputResult (String[] args) {
-        String inputString = "";
 
-        for(String arg: args){
-            inputString = inputString.concat(arg).concat(" ");
-        }
-
-        System.out.println(inputString.concat("= ").concat(OutputOperation.formatOutput(args)));
-
+        System.out.println(OutputOperation.formatOutput(args));
     }
 
 }

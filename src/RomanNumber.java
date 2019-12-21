@@ -23,7 +23,6 @@ class RomanNumber {
         for (int i = 0; i < digits.length; i++) {
             intDigits[i] = RomanDigit.toRomanDigit(digits[i]).toInteger();
         }
-        System.out.println(intCombiner(intDigits));
         return intCombiner(intDigits);
     }
 
